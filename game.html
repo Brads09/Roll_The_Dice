@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Roll The Dice</title>
+  <link rel="stylesheet" href="start.css">
+  <link rel="stylesheet" href="design.css">
+
+  <!-- Modern fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fredoka+One&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" href="images/dice.ico" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="title-sign">
+      <h1 class="title-text">Roll The Dice</h1>
+    </div>
+
+    <div class="game-header">
+      <div class="round-section">
+        <div class="round-box">
+          <span class="round-label" id="roundLabelText">1st round</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="players-grid">
+      <div class="player-card player1">
+        <div class="player-title">Player 1</div>
+        <div class="dice-area">
+          <img id="dice1" class="dice-img" src="images/dice6.png">
+        </div>
+        <div class="player-scores">
+          <div class="score-row"><span class="score-row-label">Score</span><span id="roll1">-</span></div>
+        </div>
+      </div>
+
+      <div class="player-card player2">
+        <div class="player-title">Player 2</div>
+        <div class="dice-area">
+          <img id="dice2" class="dice-img" src="images/dice6.png">
+        </div>
+        <div class="player-scores">
+          <div class="score-row"><span class="score-row-label">Score</span><span id="roll2">-</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" onclick="rollDice();">Roll!</button>
+      <button class="btn play-again-btn" onclick="playAgain();" style="display: none;">Play Again</button>
+      <button class="btn exit-btn" onclick="exitToStart();">Exit</button>
+    </div>
+    <div class="controls-hint">Press Roll to continue to the next round</div>
+  </div>
+
+  <div id="gameOverModal" class="modal" style="display:none;">
+    <div class="modal-content modal-gameover" id="modalGameOverContent">
+      <h2 class="modal-title">Game Over!</h2>
+      <p id="gameOverWinner" class="modal-subtitle">Player 1 Wins!</p>
+      <div class="round-log modal-round-log">
+        <div class="round-log-title">Round Log</div>
+        <table class="round-log-table">
+          <thead>
+            <tr>
+              <th>Round</th>
+              <th id="hdr1">1</th>
+              <th id="hdr2">2</th>
+              <th id="hdr3">3</th>
+              <th id="hdr4">4</th>
+              <th id="hdr5">5</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="roundLogBody">
+            <tr>
+              <td>Player 1</td>
+              <td id="p1r1">-</td>
+              <td id="p1r2">-</td>
+              <td id="p1r3">-</td>
+              <td id="p1r4">-</td>
+              <td id="p1r5">-</td>
+              <td id="p1Total">0</td>
+            </tr>
+            <tr>
+              <td>Player 2</td>
+              <td id="p2r1">-</td>
+              <td id="p2r2">-</td>
+              <td id="p2r3">-</td>
+              <td id="p2r4">-</td>
+              <td id="p2r5">-</td>
+              <td id="p2Total">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-actions">
+        <button class="btn start-btn" onclick="playAgainFromModal();">Play Again</button>
+        <button class="btn exit-btn" onclick="exitToStart();">Exit</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="index.js"></script>
+
+</body>
+</html>

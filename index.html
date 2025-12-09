@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roll The Dice - Start</title>
+  <link rel="stylesheet" href="start.css">
+
+  <!-- Modern fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fredoka+One&display=swap" rel="stylesheet">
+
+  <link rel="shortcut icon" href="images/dice.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="start-container">
+    <div class="title-sign">
+      <h1 class="title title-text">Roll The<br>Dice</h1>
+    </div>
+    
+    <div class="start-actions">
+    <a href="game.html" class="start-button">START</a>
+      <button class="howto-button" onclick="openHowTo()">HOW TO PLAY</button>
+      <button class="exit-button" onclick="exitGame()">EXIT</button>
+    </div>
+    
+    <div id="howtoModal" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeHowTo()">×</span>
+        <h2 class="modal-title">How To Play</h2>
+        <div class="modal-body">
+          <p>Press <span class="ui-key">START</span> to begin.</p>
+          <p>Press <span class="ui-key">Roll!</span> to roll two dice for both players.</p>
+          <p>Play 5 rounds. The player with the higher total score wins.</p>
+          <p>Press <span class="ui-key">Play Again</span> to restart.</p>
+          <p>Press <span class="ui-key">Exit</span> to return here.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <script>
+    function openHowTo() {
+      document.getElementById('howtoModal').style.display = 'flex';
+    }
+    function closeHowTo() {
+      document.getElementById('howtoModal').style.display = 'none';
+    }
+    function exitGame() {
+      try { window.open('', '_self'); window.close(); } catch (e) {}
+      window.location.href = 'about:blank';
+    }
+    window.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeHowTo(); });
+  </script>
+</body>
+</html>
+
+
+
+
+
